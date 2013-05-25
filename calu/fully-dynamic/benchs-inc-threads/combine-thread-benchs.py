@@ -15,6 +15,33 @@ import pylab as pl
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 from matplotlib.backends.backend_pdf import PdfPages
 
+def cmp_to_key(mycmp):
+  'Convert a cmp= function into a key= function'
+  class K(object):
+    def __init__(self, obj, *args):
+      self.obj = obj
+    def __lt__(self, other):
+      return mycmp(self.obj, other.obj) < 0
+    def __gt__(self, other):
+      return mycmp(self.obj, other.obj) > 0
+    def __eq__(self, other):
+      return mycmp(self.obj, other.obj) == 0
+    def __le__(self, other):
+      return mycmp(self.obj, other.obj) <= 0  
+    def __ge__(self, other):
+      return mycmp(self.obj, other.obj) >= 0
+    def __ne__(self, other):
+      return mycmp(self.obj, other.obj) != 0
+  return K
+
+def sortbenched(a, b):
+  cmpvalsa = a.split('-')
+  cmpvalsb = b.split('-')
+  if int(cmpvalsa[3]) == int(cmpvalsb[3]):
+    return int(cmpvalsa[4]) - int(cmpvalsb[4])
+  else:
+    return int(cmpvalsa[3]) - int(cmpvalsb[3])
+
 currentdir = os.getcwd()
 
 parser = argparse.ArgumentParser(description='\
@@ -35,9 +62,10 @@ args = parser.parse_args()
 benched = list()
 
 for file in os.listdir('.'):
-  if fnmatch.fnmatch(file, 'test-8192*'):
+  if fnmatch.fnmatch(file, 'test-'+args.matrixsize+'*'):
     benched.append(file)
-print(benched)
+
+benched.sort(key=cmp_to_key(sortbenched))
 
 methods = list()
 methodsReal = list()
@@ -47,8 +75,6 @@ for i in range(0,len(benched)):
   tmp = benched[i].replace('test-'+args.matrixsize+'-'+args.matrixsize+'-','')
   tmp2 = tmp.split('-')
   methodsReal.append('B'+tmp2[0]+'-L'+tmp2[1])
-
-print(methodsReal)
 
 # lists for all methods we have, those are lists of lists:
 # e.g. time_series[i] is a list of len(threads) elements of the timings
@@ -77,7 +103,6 @@ if args.plot:
     tmp = benched[i].replace('test','')
     bench_file = benched[i]+'/bench'+tmp
     file_names.append(bench_file)
-    print(file_names)
 
     file_name = file_names[i]
     # read lines of the benchmark files
@@ -136,7 +161,8 @@ if args.plot:
   'o','o','o','o','o','o','o','o','o','o'\
   ]
 
-  pp = PdfPages('results.pdf')
+  pp =\
+  PdfPages('results-inc-threads-'+str(args.matrixsize)+'-'+str(args.matrixsize)+'.pdf')
   pl.rc('legend',**{'fontsize':5})
   fig = pl.figure()
   ax = fig.add_subplot(111)
