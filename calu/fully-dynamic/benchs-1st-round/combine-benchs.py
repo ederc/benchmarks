@@ -205,8 +205,11 @@ if args.plot:
   fig = pl.figure()
   ax = fig.add_subplot(111)
   fig.suptitle('Timings: CALU fully-dynamic scheduling w/ MKL', fontsize=10)
-  pl.title('Matrix dimensions: '+dimensions[0]+
-  ' x '+dimensions[1]+' (B ~ Blocksize, L ~ Layout)', fontsize=8)
+  if int(args.matrixsize) != 1:
+    pl.title('Matrix dimensions: '+dimensions[0]+
+    ' x '+dimensions[1]+' (B ~ Blocksize, L ~ Layout)', fontsize=8)
+  else:
+    pl.title('Number of threads: '+str(args.threads)+' (B ~ Blocksize, L ~ Layout)', fontsize=8)
   if int(args.matrixsize) != 1:
     ax.set_xlabel('Number of threads', fontsize=7)
   else:
@@ -257,8 +260,11 @@ if args.plot:
   fig = pl.figure()
   ax = fig.add_subplot(111)
   fig.suptitle('GFLOPS/sec: CALU fully-dynamic scheduling w/ MKL', fontsize=10)
-  pl.title('Matrix dimensions: '+dimensions[0]+
-  ' x '+dimensions[1]+' (B ~ Blocksize, L ~ Layout)', fontsize=8)
+  if int(args.matrixsize) != 1:
+    pl.title('Matrix dimensions: '+dimensions[0]+
+    ' x '+dimensions[1]+' (B ~ Blocksize, L ~ Layout)', fontsize=8)
+  else:
+    pl.title('Number of threads: '+str(args.threads)+' (B ~ Blocksize, L ~ Layout)', fontsize=8)
   if int(args.matrixsize) != 1:
     ax.set_xlabel('Number of threads', fontsize=7)
   else:
@@ -301,6 +307,9 @@ if args.plot:
   # set GFLOPS to -1 instead of infinity. Since the MultipleLocator must
   # be set to a positive integer value, we have to take care of this case.
   granu = abs(tmp_ticks[len(tmp_ticks)-1]) // (len(tmp_ticks)-1) // 5
+  if granu == 0.0:
+    granu = 1.0
+  print(granu)
   ax.yaxis.set_minor_locator(MultipleLocator(granu))
 
   pl.tick_params(axis='both', which='major', labelsize=6)
