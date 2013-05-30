@@ -1,0 +1,114 @@
+20000,20000
+4, 8, 16, 32, 64
+8
+-1
+DATA LAYOUT .......................LAPACK LAYOUT
+LOCALITY .......................no
+SEQUENTIAL GEPP for tslu.......................dgetrf
+Generating A........
+Factorisation using CALU ..............
+M:20000, N:20000, b:512, P:4, Pr:2, nbexec:1
+Execution n°: 1/1
+INFO:0
+test_time:77.78
+real_calu_time: 77.77, Gflops:6.857808e+01/s 
+
+avg_real_calu_time: 77.77, avg_Gflops:6.857808e+01/s, 
+Generating B........
+Solve ..............
+INFO=0
+
+MAX (B-AX): 9.084539e-10
+Computing Residual.............
+EPS=1.110223e-16
+norm(B-AX):3.216008e-06, norm(A):1.016442e+04, norm(X):2.000000e+04
+
+RESID: 1.424933e+02
+DATA LAYOUT .......................LAPACK LAYOUT
+LOCALITY .......................no
+SEQUENTIAL GEPP for tslu.......................dgetrf
+Generating A........
+Factorisation using CALU ..............
+M:20000, N:20000, b:512, P:8, Pr:2, nbexec:1
+Execution n°: 1/1
+INFO:0
+test_time:40.28
+real_calu_time: 40.27, Gflops:1.324396e+02/s 
+
+avg_real_calu_time: 40.27, avg_Gflops:1.324396e+02/s, 
+Generating B........
+Solve ..............
+INFO=0
+
+MAX (B-AX): 1.049174e-09
+Computing Residual.............
+EPS=1.110223e-16
+norm(B-AX):3.247609e-06, norm(A):1.017323e+04, norm(X):2.000000e+04
+
+RESID: 1.437688e+02
+DATA LAYOUT .......................LAPACK LAYOUT
+LOCALITY .......................no
+SEQUENTIAL GEPP for tslu.......................dgetrf
+Generating A........
+Factorisation using CALU ..............
+M:20000, N:20000, b:512, P:16, Pr:2, nbexec:1
+Execution n°: 1/1
+INFO:0
+test_time:23.51
+real_calu_time: 23.50, Gflops:2.269421e+02/s 
+
+avg_real_calu_time: 23.50, avg_Gflops:2.269421e+02/s, 
+Generating B........
+Solve ..............
+INFO=0
+
+MAX (B-AX): -1.013497e-09
+Computing Residual.............
+EPS=1.110223e-16
+norm(B-AX):3.178915e-06, norm(A):1.015622e+04, norm(X):2.000000e+04
+
+RESID: 1.409635e+02
+DATA LAYOUT .......................LAPACK LAYOUT
+LOCALITY .......................no
+SEQUENTIAL GEPP for tslu.......................dgetrf
+Generating A........
+Factorisation using CALU ..............
+M:20000, N:20000, b:512, P:32, Pr:2, nbexec:1
+Execution n°: 1/1
+INFO:0
+test_time:21.09
+real_calu_time: 21.08, Gflops:2.530471e+02/s 
+
+avg_real_calu_time: 21.08, avg_Gflops:2.530471e+02/s, 
+Generating B........
+Solve ..............
+INFO=0
+
+MAX (B-AX): -1.043311e-09
+Computing Residual.............
+EPS=1.110223e-16
+norm(B-AX):3.243761e-06, norm(A):1.014705e+04, norm(X):2.000000e+04
+
+RESID: 1.439689e+02
+DATA LAYOUT .......................LAPACK LAYOUT
+LOCALITY .......................no
+SEQUENTIAL GEPP for tslu.......................dgetrf
+Generating A........
+Factorisation using CALU ..............
+M:20000, N:20000, b:512, P:64, Pr:2, nbexec:1
+Execution n°: 1/1
+INFO:0
+test_time:41.06
+real_calu_time: 41.05, Gflops:1.299276e+02/s 
+
+avg_real_calu_time: 41.05, avg_Gflops:1.299276e+02/s, 
+Generating B........
+Solve ..............
+INFO=0
+
+MAX (B-AX): -9.836085e-10
+Computing Residual.............
+EPS=1.110223e-16
+norm(B-AX):3.411157e-06, norm(A):1.015910e+04, norm(X):2.000000e+04
+
+RESID: 1.512189e+02
