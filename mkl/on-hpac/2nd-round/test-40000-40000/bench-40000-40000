@@ -1,0 +1,122 @@
+40000,40000
+4, 8, 16, 32, 64
+M=40000, N=40000, P=4
+Starting with ................ MKL
+Generating A........
+Generating B........
+Factorisation using DGETRF ..............
+Execution no: 1/1
+INFO:0
+-------------  DGETRF_time: 584.20 Gflops:7.303580e+01/s
+
+avg_real_calu_time: 584.20, avg_Gflops:7.303580e+01/s, 
+Generating B........
+Solve ..............
+INFO=0
+Solution..............
+
+Computing Residual.............
+EPS=1.110223e-16
+
+MAX (B-AX): 2.847776e-04
+norm(B-AX):1.663875e+00, norm(A):2.025280e+09, norm(X):4.000000e+04
+
+RESID: 1.849973e+02
+Free memory
+Free memory 1
+M=40000, N=40000, P=8
+Starting with ................ MKL
+Generating A........
+Generating B........
+Factorisation using DGETRF ..............
+Execution no: 1/1
+INFO:0
+-------------  DGETRF_time: 315.16 Gflops:1.353814e+02/s
+
+avg_real_calu_time: 315.16, avg_Gflops:1.353814e+02/s, 
+Generating B........
+Solve ..............
+INFO=0
+Solution..............
+
+Computing Residual.............
+EPS=1.110223e-16
+
+MAX (B-AX): -2.871528e-04
+norm(B-AX):1.691220e+00, norm(A):2.022522e+09, norm(X):4.000000e+04
+
+RESID: 1.882941e+02
+Free memory
+Free memory 1
+M=40000, N=40000, P=16
+Starting with ................ MKL
+Generating A........
+Generating B........
+Factorisation using DGETRF ..............
+Execution no: 1/1
+INFO:0
+-------------  DGETRF_time: 190.72 Gflops:2.237129e+02/s
+
+avg_real_calu_time: 190.72, avg_Gflops:2.237129e+02/s, 
+Generating B........
+Solve ..............
+INFO=0
+Solution..............
+
+Computing Residual.............
+EPS=1.110223e-16
+
+MAX (B-AX): -2.416604e-04
+norm(B-AX):1.676876e+00, norm(A):2.021909e+09, norm(X):4.000000e+04
+
+RESID: 1.867536e+02
+Free memory
+Free memory 1
+M=40000, N=40000, P=32
+Starting with ................ MKL
+Generating A........
+Generating B........
+Factorisation using DGETRF ..............
+Execution no: 1/1
+INFO:0
+-------------  DGETRF_time: 169.46 Gflops:2.517844e+02/s
+
+avg_real_calu_time: 169.46, avg_Gflops:2.517844e+02/s, 
+Generating B........
+Solve ..............
+INFO=0
+Solution..............
+
+Computing Residual.............
+EPS=1.110223e-16
+
+MAX (B-AX): -2.386040e-04
+norm(B-AX):1.658355e+00, norm(A):2.025829e+09, norm(X):4.000000e+04
+
+RESID: 1.843336e+02
+Free memory
+Free memory 1
+M=40000, N=40000, P=64
+Starting with ................ MKL
+Generating A........
+Generating B........
+Factorisation using DGETRF ..............
+Execution no: 1/1
+INFO:0
+-------------  DGETRF_time: 160.90 Gflops:2.651799e+02/s
+
+avg_real_calu_time: 160.90, avg_Gflops:2.651799e+02/s, 
+Generating B........
+Solve ..............
+INFO=0
+Solution..............
+
+Computing Residual.............
+EPS=1.110223e-16
+
+MAX (B-AX): -2.587302e-04
+norm(B-AX):1.755737e+00, norm(A):2.027694e+09, norm(X):4.000000e+04
+
+RESID: 1.949785e+02
+Free memory
+Free memory 1
