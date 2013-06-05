@@ -70,13 +70,14 @@ benched = list()
 
 if int(args.matrixsize) != 1:
   for file in os.listdir('.'):
-    if fnmatch.fnmatch(file, 'test-'+args.matrixsize):
+    if fnmatch.fnmatch(file, 'test-'+args.matrixsize+'*'):
       benched.append(file)
 else:
   for file in os.listdir('.'):
     if fnmatch.fnmatch(file, 'test-*'):
       benched.append(file)
 
+print(benched)
 benched.sort(key=cmp_to_key(sortbenched))
 
 methods     = list()
@@ -130,16 +131,14 @@ if args.plot:
     f.close()
 
   # get information about the dimension, #threads, blocksizes and layouts
-  if int(args.matrixsize) != 1:
-    print(lines)
-    dimensions = lines[0].strip().replace(' ','').split(',')
-  else:
-    dimensions = lines[0][0].strip().replace(' ','').split(',')
+  dimensions = lines[0][0].strip().replace(' ','').split(',')
 
   # second line are the thread settings used
   #################################
   # hack for benchs-2nd-try - start
   #################################
+  plot_threads.append('1')
+  plot_threads.append('2')
   plot_threads.append('4')
   plot_threads.append('8')
   plot_threads.append('16')
@@ -213,8 +212,7 @@ if args.plot:
   
   if int(args.matrixsize) != 1:
     pdfname =\
-    'results-inc-threads-'+str(args.matrixsize)+'-'+str(args.matrixsize)+\
-    '-l'+args.layout+'.pdf'
+    'results-inc-threads-'+str(args.matrixsize)+'-'+str(args.matrixsize)+'.pdf'
   else:
     pdfname = 'results-inc-matrices-t'+str(args.threads)+'.pdf'
   pp =\
